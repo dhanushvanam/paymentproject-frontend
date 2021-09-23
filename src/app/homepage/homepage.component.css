@@ -1,0 +1,49 @@
+.homediv {
+    /* width: 80%; */
+    padding-top: 80px;
+}
+
+.image {
+    width: 205px;
+    height: 100px;
+}
+
+.image3 {
+    width: 40px;
+    height: 40px;
+}
+
+.gradient {
+    background: #2980B9;
+    background: -webkit-linear-gradient(to right, #FFFFFF, rgb(0, 76, 143), rgb(0, 76, 143), #2980B9);
+    background: linear-gradient(to right, #FFFFFF, #6DD5FA, #6DD5FA, #FFFFFF);
+}
+
+.white {
+    color: white;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.image2 {
+    width: 350px;
+    padding-left: 40px;
+}
+
+.finance{
+    width: 120%;
+    border-radius: 400px 150px;
+}
+p,li{
+    font-size: large;
+}
+h3{
+    font-weight: bolder;
+    font-size: 200;
+}

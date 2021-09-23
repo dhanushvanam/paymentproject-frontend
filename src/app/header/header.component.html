@@ -1,0 +1,49 @@
+<div>
+    <nav class="navbar navbar-expand-lg hdfc">
+        <div class="container-fluid hdfc">
+            <img src="../assets/hdfclogo.png"
+                alt="hdfc_bank_logo" class="logo">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+            <div class="collapse navbar-collapse center" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active text zoom" href="#" title="Homepage" [routerLink]="['']">HOME
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text zoom" href="#" title="Login into your account"
+                            [routerLink]="['/login']" *ngIf="!loginService.isUserLoggedIn()">LOGIN
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text zoom" href="#" [routerLink]="['/profile']" title="View your profile"
+                            *ngIf="loginService.isUserLoggedIn()">PROFILE
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text zoom" href="#" title="Initiate Transfer" [routerLink]="['/transfer']"
+                            *ngIf="loginService.isUserLoggedIn()">TRANSFER
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text zoom" href="#" title="View list of transactions"
+                            [routerLink]="['/transactions']" *ngIf="loginService.isUserLoggedIn()">TRANSACTIONS
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text zoom" href="#" title="View Reports"
+                            [routerLink]="['/report']" *ngIf="loginService.isUserLoggedIn()">REPORT
+                        </a>
+                    </li>
+                </ul>
+                <li class="text li-size" style="font-weight: bolder;">{{currentDate|date:'hh:mm aa dd/MM/yyyy'}}</li>
+                <pre>  </pre>
+                <a class="nav-link active text logout hover_red" href="#" *ngIf="loginService.isUserLoggedIn()"
+                    [routerLink]="['/logout']"> LOGOUT <i class="fa fa-power-off"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>

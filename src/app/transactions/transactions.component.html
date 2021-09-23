@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <legend class="middle">LIST OF TRANSACTIONS</legend>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Transaction ID</th>
+        <th scope="col">Customer ID</th>
+        <th scope="col">Sender BIC</th>
+        <th scope="col">Institution Name</th>
+        <th scope="col">Receiver Account Holder Number</th>
+        <th scope="col">Amount (INR)</th>
+        <th scope="col">Transfer Type</th>
+        <th scope="col">Message Code</th>
+        <th scope="col">Transfer Date</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let t of transactions">
+      <tr *ngIf="t.customer.customerid == '83020817828620'">
+        <td>{{t.transactionId}}</td>
+        <td>{{t.customer.customerid}}</td>
+        <td>{{t.senderBank.bic}}</td>
+        <td>{{t.senderBank.bankname}}</td>
+        <td>{{t.receiveraccountholdernumber}}</td>
+        <td>{{t.inramount}}</td>
+        <td>{{t.transfertype.transferTypeCode}} : {{t.transfertype.transferTypeDescription}}</td>
+        <td>{{t.message.messageCode}}</td>
+        <td>{{t.transferdate}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

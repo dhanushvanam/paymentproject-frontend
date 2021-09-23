@@ -1,0 +1,60 @@
+.text {
+    color: white;
+}
+
+.btn1 {
+    background-color: rgb(0, 76, 143);
+    border: 2px solid white;
+}
+
+.center {
+    text-align: center;
+}
+
+.hdfc {
+    background-color: rgb(0, 76, 143);
+}
+
+.logout {
+    float: right;
+}
+
+.logo {
+    width: 250px;
+    height: 50px;
+}
+
+.zoom {
+    transition: transform 0.7s;
+    /* Animation */
+}
+
+.zoom:hover {
+    transform: scale(1.3);
+}
+
+.ismall {
+    width: 20px;
+    height: 20px;
+}
+
+.red {
+    color: red;
+}
+
+.hover_red {
+    transition: 0.5s;
+}
+
+.hover_red:hover {
+    color: #ED232A;
+    background-color: white;
+}
+
+a {
+    font-weight: bolder;
+    font-size: medium;
+}
+.li-size{
+    font-size: medium;
+}

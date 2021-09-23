@@ -1,0 +1,93 @@
+<div class="container-fluid center">
+    <form class="form-group">
+        <fieldset>
+            <legend class="middle">TRANSFER</legend>
+            <div class="container-fluid">
+                <div class="form-group">
+                    <label for="customerid" class="form-label mt-4">Customer ID</label>
+                    <input type="number" class="form-control" id="customerid" placeholder="Enter Customer ID"
+                        name="customerid" (change)="autofillData()" [(ngModel)]="customerid">
+                </div>
+                <div class="form-group">
+                    <label for="sendername" class="form-label mt-4">Account Holder Name</label>
+                    <input type="text" class="form-control" id="sendername" name="sendername"
+                        [value]="customers.accountholdername" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="balance" class="form-label mt-4">Clear Balance</label>
+                    <input type="number" class="form-control" id="balance" step="any" name="balance"
+                        [value]="customers.clearbalance" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="currency" class="form-label mt-4">Currency</label>
+                    <input type="text" class="form-control" id="currency" name="currency" readonly value="INR">
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="form-group">
+                    <label for="receiverbic" class="form-label mt-4">Receiver BIC</label>
+                    <input type="text" class="form-control" id="receiverbic" placeholder="Enter Receiver BIC"
+                        name="receiverbic">
+                </div>
+                <div class="form-group">
+                    <label class="form-label mt-4">Institution Name</label>
+                    <input type="text" class="form-control" id="iname" name="iname">
+                </div>
+                <div class="form-group">
+                    <label class="form-label mt-4">Receiver Account Holder Name</label>
+                    <input type="text" class="form-control" id="receivername" name="receivername">
+                </div>
+                <div class="form-group">
+                    <label class="form-label mt-4">Receiver Account Number</label>
+                    <input type="number" class="form-control" id="receivernumber" name="receivernumber">
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="form-group">
+                    <label for="transfertype" class="form-label mt-4">Select type of Transfer</label>
+                    <select class="form-select" id="transfertype">
+                        <option selected>----</option>
+                        <option value="C">C - Customer Transfer</option>
+                        <option value="O">O - Bank Transfer for Own Account</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label mt-4">Message Code</label>
+                    <select class="form-select" id="messagecode">
+                        <option value="CHQB">CHQB : Beneficiary customer must be paid by cheque only</option>
+                        <option value="CORT">CORT : Payment is made in settlement for a trade</option>
+                        <option value="HOLD">HOLD : Beneficiary customer or claimant will call upon identification
+                        </option>
+                        <option value="INTC">INTC : Payment between two companies that belongs to the same group
+                        </option>
+                        <option value="PHOB">PHOB : Please advise the intermediary institution by phone</option>
+                        <option value="PHOI">PHOI : Please advise the intermediary by phone</option>
+                        <option value="PHON">PHON : Please advise the account with institution by phone</option>
+                        <option value="REPA">REPA : Payments has a related e-Payments reference</option>
+                        <option value="SDVA">SDVA : Payment must be executed with same day value to the</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount" class="form-label mt-4">Amount</label>
+                    <input type="number" class="form-control" id="amount" name="amount" [(ngModel)]="amount"
+                        (change)="calculateFee()" placeholder="Enter Amount to be transferred" #inputBox>
+                </div>
+                <div class="form-group">
+                    <label for="fee" class="form-label mt-4">Transfer Fee (0.25%)</label>
+                    <input type="number" class="form-control" id="fee" name="fee" [(ngModel)]="transferFee"
+                        placeholder="0.25% of amount will be charged as fee" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="total" class="form-label mt-4">Total Amount</label>
+                    <input type="number" class="form-control" id="total" name="total" [(ngModel)]="total"
+                        placeholder="Total Amount" readonly>
+                </div>
+            </div>&nbsp;&nbsp;
+            <div class="d-grid gap-2 d-md-block middle">
+                <button class="btn btn-success pad" type="submit">Transfer</button>&nbsp;
+                <img src="../assets/transfer.gif" class="transfer-image">
+                <button class="btn btn-danger pad" type="reset">Cancel</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
